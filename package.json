@@ -2,7 +2,7 @@
     "scripts": {
         "start": "cd frontend && yarn start",
         "server": "node app.js",
-        "build": "npm i && cd backend && npm i && cd .. && cd frontend && npm run build"
+        "build": "git pull && npm i && cd backend && npm i && cd .. && cd frontend && npm run build"
     },
     "type": "module",
     "dependencies": {
