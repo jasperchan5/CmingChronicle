@@ -52,7 +52,7 @@ export default () => {
             { loaded ? <Bounce up>
                 <Card sx={{width: "800px", margin: 'auto', marginTop: "48px"}}>   
                     <div style={{margin: 32, textAlign: "center"}}>
-                        {articleContent.map((e,i) =>  e.match(/\d+\年{0,1}\：{1}/) 
+                        {articleContent.map((e,i) =>  e.indexOf("：") !== -1
                         ?   <Bounce left cascade>
                                 <Card sx={{margin: "12px 0px", padding: "12px 0px", background: "#AD1546", fontSize: "20px", color: "#F7F9FA"}} key={i}>
                                     {e}

@@ -42,6 +42,7 @@ router.get("/getChronology", async(_,res) => {
     const $ = cheerio.load(pageHTML.data)
     let response = []
     $('#article_content').find("div").each((i,e) =>{
+        let toPush = "";
         if(i > 1){
             toPush = $(e).text();
             while(toPush.indexOf("(") !== -1){

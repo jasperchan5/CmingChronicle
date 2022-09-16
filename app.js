@@ -5,7 +5,7 @@ import path from "path";
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 import http from "http";
-import router from './router.js';
+import router from './backend/router.js';
 
 const app = express();
 
