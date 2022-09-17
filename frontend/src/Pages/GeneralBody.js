@@ -203,7 +203,7 @@ const CmingTitleStepper = ({title,stepsContent,content}) => {
                       aria-controls="panel1a-content"
                       id="panel1a-header"
                     >
-                        <img style={{margin: 'auto'}} src={smallerLogo}/>
+                        <img style={{margin: 'auto', cursor: "pointer"}} onClick={() => navigate("/")} src={smallerLogo}/>
                     </AccordionSummary>
                     <AccordionDetails>
                       <CMingStepper/>

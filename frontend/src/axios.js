@@ -1,8 +1,7 @@
 import axios from 'axios';
 
 const instance = axios.create({
-    baseURL: "https://cmingchronicle.herokuapp.com/",
-    headers: {"Access-Control-Allow-Origin": "*"}
+    baseURL: "https://cmingchronicle.herokuapp.com/"
 })
 
 export default instance;
