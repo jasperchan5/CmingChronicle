@@ -1,7 +1,7 @@
 {
     "scripts": {
-        "start": "cd frontend && yarn start",
-        "server": "node app.js",
+        "frontend": "cd frontend && yarn start",
+        "start": "node app.js",
         "build": "yarn install && cd backend && yarn install && cd .. && cd frontend && yarn build"
     },
     "type": "module",
