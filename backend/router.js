@@ -19,7 +19,7 @@ router.get("/getText", async(req,res) => {
         let toPush = "";
         if($(e).find("a")){
             console.log($(e).text());
-            $(e).find("a").each((_,e) => toPush = $(e).attr("href"));
+            $(e).find("a").each((_,e) => toPush = $(e).text());
             response.push(toPush);
         }
         else{
