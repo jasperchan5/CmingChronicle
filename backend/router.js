@@ -15,25 +15,14 @@ router.get("/getText", async(req,res) => {
     const pageHTML = await axios.get(url).then();
     const $ = cheerio.load(pageHTML.data);
     let response = []
-    $('#article_content').find("div").each((i,e) =>{
-        let toPush = "";
-        if($(e).find("a")){
-            console.log($(e).text());
-            $(e).find("a").each((_,e) => toPush = $(e).text());
-            response.push(toPush);
-        }
-        else{
-            let toPush = $(e).text();
-            while(toPush.indexOf("(") !== -1){
-                toPush = toPush.replace("(","（")
-            }
-            while(toPush.indexOf(")") !== -1){
-                toPush = toPush.replace(")","）")
-            }
+    $('#article_content').find("div").each((_,e) =>{
+        let toPush = {text: $(e).text(), href: ""};
+        $(e).find("a").each((_,f) => toPush = {text: $(f).text(), href: $(f).attr("href")});
+        if(toPush !== {text: '', href: ''}){
             response.push(toPush);
         }
     })
-
+    // console.log(response);
     res.status(200).send(response);
 })
 
