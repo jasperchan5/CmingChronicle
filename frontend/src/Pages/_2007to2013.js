@@ -42,7 +42,7 @@ export default () => {
             <CmingTitleStepper title={"──　2007～2013：大學篇　──"} stepsContent={['連番打擊，沉迷末日預言', '網遊耍白，惹人厭惡', '仇視西醫，爺爺枉死','躲兵役到報考預官']}/>
             {
                 loaded ? 
-                    <Card sx={{width: "800px", margin: 'auto', marginTop: "48px"}}>
+                    <Card className="contentCard">
                         <div style={{margin: 32}}>
                             {articleContent.map((e,i) => 
                                 <Fade key={i} left cascade>

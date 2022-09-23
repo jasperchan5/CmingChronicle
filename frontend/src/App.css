@@ -17,7 +17,6 @@ html, body{
   #Header .logo{
     width: 350px;
     margin: auto;
-    position: absolute;
     cursor: pointer;
   }
   #Header .menuText{
@@ -49,5 +48,108 @@ html, body{
     font-family: 'Zen Antique', serif;
     margin: 32px;
     text-align: center;
+  }
+  .contentCard {
+    width: 800px;
+    margin: auto;
+    margin-top: 48px;
+  }
+}
+@media(max-width: 1367px){
+  #Header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 144px;
+    border-bottom: 1.5px solid #20232525;
+    box-shadow: 2px 2px 8px #20232525;
+    position: relative;
+  }
+  #Header .logo{
+    width: 290px;
+    margin: auto;
+    cursor: pointer;
+  }
+  #Header .menuText{
+    font-size: 16px;
+    font-family: 'Zen Antique', serif;
+  }
+  #Header .chronology{
+    font-size: 22px;
+    font-family: 'Zen Antique', serif;
+    background-color: #F7F9FA;
+    position: absolute;
+  }
+  #Footer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 144px;
+    margin: 24px 0px;
+    border-bottom: 1.5px solid #20232525;
+    box-shadow: 2px 2px 8px #20232525;
+    position: relative;
+    font-size: 24px;
+    font-family: 'Zen Antique', serif;
+  }
+  .eachPageTitle{
+    font-size: 24px;
+    font-family: 'Zen Antique', serif;
+    margin: 32px;
+    text-align: center;
+  }
+  .contentCard {
+    width: 800px;
+    margin: auto;
+    margin-top: 48px;
+  }
+}
+@media(max-width: 767px){
+  #Header{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 108px;
+    border-bottom: 1.5px solid #20232525;
+    box-shadow: 2px 2px 8px #20232525;
+    position: relative;
+  }
+  #Header .logo{
+    width: 175px;
+    margin: auto;
+    cursor: pointer;
+  }
+  .menuText{
+    font-size: 18px;
+    font-family: 'Zen Antique', serif;
+  }
+  #Footer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 144px;
+    margin: 24px 0px;
+    border-bottom: 1.5px solid #20232525;
+    box-shadow: 2px 2px 8px #20232525;
+    position: relative;
+    font-size: 24px;
+    font-family: 'Zen Antique', serif;
+  }
+  .eachPageTitle{
+    font-size: 20px;
+    font-family: 'Zen Antique', serif;
+    margin: 16px;
+    text-align: center;
+  }
+  .contentCard {
+    width: 340px;
+    margin: auto;
+    margin-top: 24px;
   }
 }

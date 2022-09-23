@@ -36,7 +36,7 @@ export default () => {
             <CmingTitleStepper title={"2013～2014：從軍篇"} stepsContent={['成功嶺入伍，怒噴台大','安岱輔導長，狗才當兵']}/>
             {
                 loaded ? 
-                    <Card sx={{width: "800px", margin: 'auto', marginTop: "48px"}}>
+                    <Card className="contentCard">
                         <div style={{margin: 32}}>
                             {articleContent.map((e,i) => 
                                 <Fade key={i} left cascade>

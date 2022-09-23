@@ -31,7 +31,7 @@ export default () => {
     }, [location])
     return (
         <>
-            <div style={{margin: 48, textAlign: "center"}}>
+            <div style={{margin: "48px 0px", textAlign: "center"}}>
                 <div className="eachPageTitle">2022</div>
             </div>
             <CmingTitleStepper title={""} stepsContent={[
@@ -40,7 +40,7 @@ export default () => {
             />
             {
                 loaded ? 
-                <Card sx={{width: "800px", margin: 'auto', marginTop: "48px"}}>
+                <Card className="contentCard">
                     <div style={{margin: 32}}>
                         {articleContent.map((e,i) => 
                             <Fade key={i} left cascade>

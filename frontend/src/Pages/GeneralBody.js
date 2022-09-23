@@ -20,10 +20,12 @@ import StickyHeader from 'react-sticky-header';
 
 import { useLocation, useNavigate } from 'react-router-dom';
 import useQuery from "../Hooks/useQuery";
+import useWindowSize from './../Hooks/useWindowSize';
 
 const smallerLogo = "https://imgur.com/q6ZPcqB.png";
 
 const Loading = () => {
+  const { windowWidth } = useWindowSize();
   const [counter,setCounter] = useState(0);
   useEffect(() => {
     const addCounter = () => setInterval(() => setCounter(counter+1), 2500);
@@ -31,12 +33,20 @@ const Loading = () => {
     return () => clearInterval(addCounter);
   }, [counter])
   return (
-    <Box sx={{width: "800px", height: "400px", margin: "auto", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
-      <CircularProgress size={150}/>
-      <Jump spy={counter}>
-        <div style={{marginTop: 48, fontSize: "24px"}}>Loading...</div>
-      </Jump>
-    </Box>
+    windowWidth > 1367 ? 
+      <Box sx={{width: "800px", height: "400px", margin: "24px auto", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
+        <CircularProgress size={100}/>
+        <Jump spy={counter}>
+          <div style={{marginTop: 48, fontSize: "24px"}}>Loading...</div>
+        </Jump>
+      </Box>
+    :
+      <Box sx={{width: "100%", height: "200px", margin: "auto", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
+        <CircularProgress size={150}/>
+        <Jump spy={counter}>
+          <div style={{marginTop: 24, fontSize: "18px"}}>Loading...</div>
+        </Jump>
+      </Box>
   )
 } 
 
@@ -191,7 +201,7 @@ const CmingTitleStepper = ({title,stepsContent,content}) => {
 
     return (
         <div id="Body">
-            <div style={{margin: 48, textAlign: "center"}}>
+            <div style={{margin: "48px 0px", textAlign: "center"}}>
                 <div className="eachPageTitle">{title}</div>
             </div>
             <CMingStepper/>

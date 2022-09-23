@@ -4,10 +4,12 @@ import instance from "../axios";
 import Bounce from 'react-reveal/Bounce';
 import Fade from 'react-reveal/Fade';
 import { Loading } from "./GeneralBody";
+import useWindowSize from './../Hooks/useWindowSize';
 
 export default () => {
     const [articleContent, setArticleContent] = useState([]);
     const [loaded,setLoaded] = useState(false);
+    const { windowWidth } = useWindowSize();
     useEffect(() => {
         const handleDataFetch = async() => {
             await instance.get("/api/getChronology").then((res) => {
@@ -31,14 +33,14 @@ export default () => {
         return (
             <Fade left cascade>
                 <Grid container spacing={2}>
-                    <Grid item lg={3}>
+                    <Grid item lg={3} md={3} sm={3} xs={3}>
                         <Fade down cascade>
-                            {date === "" ? <></> : <Card style={{margin: "8px 0px", padding: "8px 0px", background: "#DE3163", color: "#FFF"}}>{date}</Card>}
+                            {date === "" ? <></> : <Card style={{margin: "8px 0px", padding: "8px 0px", background: "#DE3163", color: "#FFF", fontSize: windowWidth > 767 ? "16px" : "12px"}}>{date}</Card>}
                         </Fade>
                     </Grid>
-                    <Grid item lg={9}>
+                    <Grid item lg={9} md={9} sm={9} xs={9}>
                         <Fade down cascade>
-                            {content === "" ? <></> : <Card style={{margin: "8px 0px", padding: "8px 0px"}}>{content}</Card>}
+                            {content === "" ? <></> : <Card style={{margin: "8px 0px", padding: "8px 0px", fontSize: windowWidth > 767 ? "16px" : "12px"}}>{content}</Card>}
                         </Fade>
                     </Grid>
                 </Grid>
@@ -50,11 +52,11 @@ export default () => {
             <div className="eachPageTitle">大事年表</div>
             <hr></hr>
             { loaded ? <Bounce up>
-                <Card sx={{width: "800px", margin: 'auto', marginTop: "48px"}}>   
+                <Card className="contentCard">   
                     <div style={{margin: 32, textAlign: "center"}}>
                         {articleContent.map((e,i) =>  e.indexOf("：") !== -1
                         ?   <Bounce left cascade>
-                                <Card sx={{margin: "12px 0px", padding: "12px 0px", background: "#AD1546", fontSize: "20px", color: "#F7F9FA"}} key={i}>
+                                <Card sx={{margin: "12px 0px", padding: "12px 0px", background: "#AD1546", fontSize: windowWidth > 767 ? "20px" : "16px", color: "#F7F9FA"}} key={i}>
                                     {e}
                                 </Card>
                             </Bounce> 

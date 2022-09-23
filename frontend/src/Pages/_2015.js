@@ -38,7 +38,7 @@ export default () => {
             <CmingTitleStepper title={"2015：家樂福篇"} stepsContent={['黃金傳說和群Yee證：計畫趕不上變化','自我膨脹，決戰家樂福','汁男啟蒙，小霸主覺醒']}/>
             {
                 loaded ? 
-                    <Card sx={{width: "800px", margin: 'auto', marginTop: "48px"}}>
+                    <Card className="contentCard">
                         <div style={{margin: 32}}>
                             {articleContent.map((e,i) => 
                                 <Fade key={i} left cascade>
